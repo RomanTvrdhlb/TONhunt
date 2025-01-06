@@ -1,0 +1,98 @@
+.main-btn {
+  border-radius: 44px;
+  background: var(--gr-a);
+  font-family: var(--font3);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 193%;
+  text-align: center;
+  color: rgba(var(--cl-a),1.0);
+  grid-gap: 2px;
+  padding: clamp(6px, .6838vw, 8px) clamp(16px, 1.9658vw, 23px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  transition: all .4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: clamp(41px, 3.7607vw, 44px);
+
+  &::before{
+    position: absolute;
+    content: '';
+    z-index: 2;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(156, 168, 206, 0.1);
+    pointer-events: none;
+  }
+
+  svg{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 25px;
+    height: 21px;
+    transform: translateY(-50%);
+  }
+
+  span{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(var(--bg-c),1.0);
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color:  rgba(var(--cl-a),1.0);
+    span {
+      width: 225%;
+      height: calc(150px * 2.25);
+    }
+  }
+
+  &--transparent{
+    background: transparent;
+    border: solid 1px var(--br-b);
+    color: rgba(var(--cl-a),1.0);
+    padding: clamp(6px, .6838vw, 8px) clamp(24px, 3.2479vw, 38px);
+
+    &::before{
+      backdrop-filter: blur(100px);
+      z-index: -1;
+    }
+
+    &:hover{
+      border-color: var(--br-b);
+    }
+  }
+  
+  &--blue{
+    border-radius: 12px;
+    max-width: 321px;
+    width: 100%;
+    height: clamp(56px, 5.1282vw, 60px);
+    background: rgba(var(--bg-c),1.0);
+    color: rgba(var(--cl-a),1.0);
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(16px, 1.5385vw, 18px);
+    line-height: 89%;
+
+    span{
+      background: rgba(var(--bg-a),1.0);
+    }
+
+    &:hover{
+      color: rgba(var(--cl-c),1.0);
+    }
+  }
+}

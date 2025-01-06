@@ -1,0 +1,58 @@
+.header {
+  padding: clamp(16px, 2.3932vw, 28px) 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 90;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
+
+    @include for-tablet {
+      grid-gap: 19px;
+
+      .main-nav {
+        justify-self: center;
+      }
+    }
+
+    @include tablet {
+      grid-template-columns: auto 1fr auto;
+      grid-gap: clamp(15px, 1.953vw, 20px);
+      .main-nav {
+        display: none;
+      }
+    }
+
+    @include mobile{
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    justify-content: flex-end;
+
+    @include mobile{
+      display: none;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    @include burger;
+  }
+
+  @include mobile{
+    justify-self: end;
+  }
+}

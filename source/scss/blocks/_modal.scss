@@ -1,0 +1,130 @@
+.modal {
+  width: 90vw;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: clamp(35px, 5.2137vw, 61px);
+
+  @include for-mobile {
+    max-width: fit-content;
+  }
+
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    border-radius: 21px;
+    z-index: 2;
+    padding: 25px 25px 30px;
+    position: relative;
+    background: rgba(var(--cl-b), 1);
+
+    @include for-mobile {
+      min-width: 447px;
+      max-width: fit-content;
+    }
+
+    &::before {
+      pointer-events: none;
+      position: absolute;
+      content: "";
+      z-index: -1;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid var(--br-c);
+      background: var(--gr-d);
+      backdrop-filter: blur(9.600000381469727px);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 8px;
+  }
+
+  &__link {
+    color: rgba(var(--cl-f), 1);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: clamp(36px, 4.7009vw, 55px);
+    font-weight: 700;
+
+    @include for-mobile{
+      line-height: 38.182%;
+    }
+  }
+
+  .main-form {
+    border: none;
+    background: initial;
+    padding: 0;
+
+    .main-btn {
+      margin-top: 7px;
+      max-width: 100%;
+    }
+  }
+
+  &.login {
+    .main-form {
+      grid-gap: 15px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &.forgot {
+    .main-form {
+      grid-gap: 20px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &.code {
+    .main-form {
+      grid-gap: 20px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &.create {
+
+    .modal{
+      &__box{
+        min-width: Min(91.016vw, 932px);
+      }
+    }
+
+    .main-form {
+      grid-gap: 20px clamp(20px, 2.2222vw, 26px);
+      align-items: center;
+      
+      @include tablet{
+        @include for-small-tablet{
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      
+
+      .main-btn{
+        grid-column: initial;
+        margin-top: 0;
+        align-self: flex-end;
+        height: 52px;
+      }
+    }
+  }
+
+}

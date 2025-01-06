@@ -1,0 +1,41 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  padding: 5px 7px;
+  width: fit-content;
+  border-radius: 99px;
+  background: rgba(var(--bg-e), 1);
+  padding: 10px 38px;
+  gap: 24px;
+  height: 44px;
+  position: relative;
+  z-index: 3;
+  background: var(--gr-a);
+  backdrop-filter: blur(28.399999618530273px);
+
+  &::before{
+    position: absolute;
+    content: '';
+    z-index: 2;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(156, 168, 206, 0.1);
+    pointer-events: none;
+  }
+
+  &__link {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(var(--cl-a),1.0);
+    border-radius: 999px;
+    transition: all 0.4s;
+
+    &:hover {
+      color: rgba(var(--cl-c),1.0);
+    }
+  }
+}

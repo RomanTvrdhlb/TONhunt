@@ -1,0 +1,73 @@
+// --------------- hex to rgba mixin ---------------
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  // --------------- default global variables ---------------
+  --error-bg: #d01f1f;
+  --body-bg: #06070C;
+  --body-font-size: 16px;
+  --content-width: 1170px;
+
+  --container-offset: clamp(16px, 2.0513vw, 24px);
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // --------------- default JS variables ---------------
+
+  --header-height: 100px;
+
+  @include tablet{
+    --header-height: 89px;
+  }
+
+  @include mobile{
+    --header-height: 67px;
+  }
+
+
+  // --------------- default scroll variables ---------------
+  --scrollbar-thumb: #2363f996;
+  --scrollbar-track: #121835;
+  --scrollbar-track-hover: transparent;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+
+  // --------------- default select variables ---------------
+  --select-inner-bg: #404040;
+  --select-inner-border: #FDFDFD;
+  --select-focus-border: #FDFDFD;
+
+  // --------------- default font-family variables ---------------
+
+  --font-family: "Commissioner", sans-serif; // var(--font-family);
+  --second-family: "Vela", sans-serif; // var(--second-family);
+  --third-family: "SF-Pro", sans-serif; // var(--third-family);
+  --font3: "Zapus", sans-serif; // var(--font3);
+
+
+  // --------------- default text color variables ---------------
+  --cl-a: #{HexToRGB(#ffffff)}; // rgba(var(--cl-a),1.0);
+  --cl-b: #{HexToRGB(#000000)}; // rgba(var(--cl-b),1.0);
+  --cl-c: #{HexToRGB(#0c8afa)}; // rgba(var(--cl-c),1.0);
+  --cl-d: #{HexToRGB(#9ca8ce)}; // rgba(var(--cl-d),1.0);
+
+  // --------------- default background color variables ---------------
+  --bg-a: #{HexToRGB(#ffffff)}; // rgba(var(--bg-a),1.0);
+  --bg-b: #{HexToRGB(#000000)}; // rgba(var(--bg-b),1.0);
+  --bg-c: #{HexToRGB(#0c8afa)}; // rgba(var(--bg-c),1.0);
+  --bg-d: #{HexToRGB(#0b0d17)}; // rgba(var(--bg-d),1.0);
+  --bg-e: #{HexToRGB(#101116)}; // rgba(var(--bg-e),1.0);
+
+
+  // --------------- default border color variable ---------------
+  --br-a: #ffffff; // var(--br-a);
+  --br-b: #0c8afa; // var(--br-b);
+
+
+ // --------------- default gradient color variable ---------------
+ --gr-a: linear-gradient(180deg, rgba(37, 43, 55,1) 0%, rgba(37, 43, 55, 0) 100%); // var(--gr-a);
+ --gr-b: linear-gradient(180deg, rgba(37, 43, 55,.5) 0%, rgba(37, 43, 55, 0) 100%); // var(--gr-b);
+
+}
+
+

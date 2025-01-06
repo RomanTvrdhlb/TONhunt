@@ -1,0 +1,41 @@
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-style: $style;
+    font-weight: #{$weight};
+    font-family: "#{$font-family}";
+
+    font-display: swap;
+    src: url("../fonts/#{$url}.woff2") format("woff2"),
+    url("../fonts/#{$url}.woff") format("woff");
+  }
+}
+
+
+@include font-face("Commissioner",  "Commissioner-Medium", 500, normal);
+@include font-face("Commissioner",  "Commissioner-Regular", 400, normal);
+@include font-face("Commissioner",  "Commissioner-SemiBold", 600, normal);
+
+@include font-face("SF-Pro",  "sf-pro-display-bold", 700, normal);
+@include font-face("SF-Pro",  "sf-pro-display-medium", 500, normal);
+@include font-face("SF-Pro",  "sf-pro-display-regular", 400, normal);
+
+@include font-face("Vela",  "VelaSans-Bold", 700, normal);
+@include font-face("Vela",  "VelaSans-Medium", 500, normal);
+@include font-face("Vela",  "VelaSans-Regular", 400, normal);
+@include font-face("Vela",  "VelaSans-SemiBold", 600, normal);
+
+@include font-face("Zapus",  "ZapusSans-ExtraBold", 800, normal);
+
+
+
+// 100 – Thin || Hairline
+// 200 – Extra Light || Ultra Light || Thin
+// 300 – Light
+// 450 – Demi
+// 400 – Normal || Regular
+// 500 – Medium
+// 600 – Semi Bold || Demi Bold
+// 700 – Bold
+// 800 – Extra Bold || Ultra Bold || Heavy
+// 900 – Black || Heavy
+

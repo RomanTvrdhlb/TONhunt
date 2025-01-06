@@ -1,0 +1,107 @@
+.custom-radio {
+  position: relative;
+
+  input:not([type="date"]) {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  span {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    user-select: none;
+    color: rgba(var(--cl-f),1.0);
+
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+
+    a {
+      color: rgba(var(--cl-f),1.0);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+
+
+    &::before {
+      cursor: pointer;
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      //border-radius: 4px;
+      border: 2px solid #C1C2C7;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 10px 10px;
+      border-radius: 50%;
+    }
+  }
+
+  input {
+    &:not(:disabled) {
+      &:not(:checked) + span:hover::before {
+        border-color: #2458D3;
+      }
+
+      &:active + span::before {
+        background-color: transparent;
+        border-color: #2458D3;
+      }
+    }
+
+
+    &:checked + span::before {
+      border-color: #2458D3;
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none'%3E%3Ccircle cx='5' cy='5' r='5' fill='%232458D3'/%3E%3C/svg%3E");
+    }
+
+    &:disabled + span::before {
+      background-color: #e9ecef;
+    }
+  }
+
+  &--content {
+    span {
+      height: 42px;
+      padding: 2px clamp(20px, 2.08vw, 32px);
+      border-radius: 100px;
+      border: 1px solid rgba(133, 135, 145, 0.25);
+      background: rgba(var(--bg-a),1.0);
+
+      &:before,
+      &:after {
+        content: none;
+      }
+
+      svg {
+        color: rgba(var(--cl-o),1.0);
+      }
+    }
+
+    input:checked + span {
+      border-color: rgba(var(--bg-c),1.0);
+      background: rgba(var(--bg-c),1.0);
+      color: rgba(var(--cl-a),1.0);
+
+      svg {
+        color: rgba(var(--cl-a),1.0);
+      }
+    }
+  }
+}
+

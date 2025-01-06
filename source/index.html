@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  @include('partials/header.html')
+  <!--@include('partials/header-user.html')-->
+
+  <main>
+
+    <section class="first-section">
+      <div class="container">
+        <div class="first-section__box">
+          <div class="main-top">
+            <h1 class="main-top__title title">#1 Telegram Mini-App where you hunt TON rewards daily</h1>
+            <p>Happy hunter games! And may the odds be in your favour</p>
+            <button class="main-btn main-btn--blue">Earn FREE TON
+              <svg width='25' height='20'>
+                <use href='img/sprite/sprite.svg#tg'></use>
+              </svg>
+              <span></span>
+            </button>
+
+            <div class="main-top__inner">
+              <span class="main-top__text">Our social media:</span>
+
+              <ul class="social">
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#tg'></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#youtube'></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#gmail'></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="first-section__image">
+            <picture>
+              <source type='image/webp' srcset='img/index/bg.webp'>
+              <img width='900' height='900' src='img/index/bg.png' alt='image'>
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="about-section__box">
+          <h2 class="title"><i>WEB3</i> TON HUNTING</h2>
+
+          <ul class="about-section__list">
+            <li class="about-section__item">
+              <div class="about-card">
+                <div class="about-card__image">
+                  <picture>
+                    <source type='image/webp' srcset='img/index/image1.webp'>
+                    <img width='227' height='227' src='img/index/image1.png' alt='image'>
+                  </picture>
+                </div>
+                <p>In TONhunt you become a real hunter and catch daily TON rewards with fury power. </p>
+              </div>
+            </li>
+            <li class="about-section__item">
+              <div class="about-card">
+                <div class="about-card__image medium">
+                  <picture>
+                    <source type='image/webp' srcset='img/index/image2.webp'>
+                    <img width='227' height='227' src='img/index/image2.png' alt='image'>
+                  </picture>
+                </div>
+                <p>Hunters can increase the TON catch with MH/s. 100 MH/s will be given as bonus for your 1st game -
+                  hurry up!</p>
+              </div>
+            </li>
+            <li class="about-section__item">
+              <div class="about-card">
+                <div class="about-card__image small">
+                  <picture>
+                    <source type='image/webp' srcset='img/index/image3.webp'>
+                    <img width='227' height='227' src='img/index/image3.png' alt='image'>
+                  </picture>
+                </div>
+                <p>Real hunters don’t miss a chance to increase TON catch! Compete missions, invite friends, boost MH/s,
+                  enrich.</p>
+              </div>
+            </li>
+          </ul>
+
+          <button class="main-btn main-btn--blue">
+            Earn FREE TON
+            <svg width='25' height='20'>
+              <use href='img/sprite/sprite.svg#tg'></use>
+            </svg>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+</body>
+<script src="js/main.js"></script>
+
+</html>

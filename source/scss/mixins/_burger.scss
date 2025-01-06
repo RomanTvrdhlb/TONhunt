@@ -1,0 +1,70 @@
+/* stylelint-disable */
+
+@mixin burger {
+  --burger-width: 24px;
+  --burger-height: 16px;
+  --burger-line-height: 2px;
+  --border-radius: 0;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: var(--burger-line-height);
+    background: rgba(var(--cl-a),1.0);
+    transform-origin: left top;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, opacity .5s;
+    border-radius: var(--border-radius);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &__line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    background: rgba(var(--cl-a),1.0);
+    transform: translate(-50%,-50%);
+    transition: transform 0.3s ease-in-out, opacity .5s;
+    border-radius: var(--border-radius);
+  }
+
+  &.active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg) translate(-50%, -50%);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg) translate(-50%, -50%);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

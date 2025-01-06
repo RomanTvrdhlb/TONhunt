@@ -1,0 +1,10 @@
+.footer {
+  padding: clamp(23px, 2.3077vw, 27px) 0 clamp(24px, 2.3932vw, 28px);
+
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 25px 20px;
+  }
+}
+
